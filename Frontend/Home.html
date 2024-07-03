@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Tap Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 80vw;
+            height: 90vh;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .username {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .score {
+            font-size: 3.6rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        .coin-image {
+            width: 5.4rem;
+            height: 5.4rem;
+            background-image: url('./public/Images/10243319.png');
+            background-size: cover;
+            margin-right: 1rem;
+        }
+
+        #score-value {
+            color: #ffd700;
+        }
+
+        .game-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .tap-button {
+            width: 20rem;
+            height: 20rem;
+            background-image: url('./public/Images/sample_genie_lamp.jpg');
+            background-size: cover;
+            background-position: center;
+            border: .8rem solid #84aee5;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        }
+
+        .tap-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer-button {
+            width: 6rem;
+            height: 6rem;
+            background-size: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="username">Sample_Username</div>
+            <div class="score">
+                <div class="coin-image"></div>
+                <span id="score-value">1110</span>
+            </div>
+        </div>
+        <div class="game-area">
+            <button class="tap-button" onclick="incrementScore()"></button>
+        </div>
+        <div class="footer">
+            <div class="footer-button" style="background-image: url('./public/Images/exchange_icon.png');"></div>
+            <div class="footer-button" style="background-image: url('./public/Images/mine_icon.png');"></div>
+            <div class="footer-button" style="background-image: url('./public/Images/friends_icon.png');"></div>
+            <div class="footer-button" style="background-image: url('./public/Images/earn_icon.png');"></div>
+            <div class="footer-button" style="background-image: url('./public/Images/airdrop_icon.png');"></div>
+        </div>
+    </div>
+
+    <script>
+        let score = 1110;
+        const scoreElement = document.getElementById('score-value');
+
+        function incrementScore() {
+            score += 2;
+            scoreElement.textContent = score;
+        }
+    </script>
+</body>
+</html>

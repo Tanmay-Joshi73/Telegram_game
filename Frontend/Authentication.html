@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persian Themed Login/Signup</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+
+        body {
+            font-family: 'Scheherazade New', serif;
+            background-color: #F8E9D6;
+            color: #4A2511;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('./public/Images/persian_background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background: linear-gradient(135deg, rgba(211, 199, 152, 0.9), rgba(243, 197, 111, 0.9));
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 800px;
+            max-width: 90%;
+            display: flex;
+        }
+        .form-container {
+            flex: 1;
+            padding: 40px;
+            transition: 0.5s;
+        }
+        .switch-container {
+            flex: 1;
+            background-image: url('./public/Images/persian_pattern.png');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #8B4513;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+        }
+        button {
+            background-color: #87CEFA;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background-color: #5CACEE;
+            transform: scale(1.05);
+        }
+        .switch-button {
+            background-color: transparent;
+            border: 2px solid #FFFFFF;
+            margin-top: 20px;
+        }
+        .switch-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        #signup-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="login-form">
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <form id="signup-form">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="switch-container">
+            <h2>Welcome to the Persian Realm</h2>
+            <p>Enter the magical world of Persian adventures.</p>
+            <button class="switch-button" onclick="switchForm()">Switch to <span id="switch-text">Sign Up</span></button>
+        </div>
+    </div>
+
+    <script>
+        function switchForm() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const switchText = document.getElementById('switch-text');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                switchText.textContent = 'Sign Up';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                switchText.textContent = 'Login';
+            }
+        }
+    </script>
+</body>
+</html>
