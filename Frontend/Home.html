@@ -5,175 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Tap Game</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html {
-            font-size: 62.5%;
-        }
+html {
+    font-size: 62.5%;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: #ffffff;
-            height: 100vh;
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .container {
-            width: 35%;
-            height: 90vh;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 2rem;
-            padding: 2rem;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
+.container {
+    width: 90%;
+    max-width: 40rem;
+    height: 90vh;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .username {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
+.username {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
 
-        .score {
-            font-size: 3.6rem;
-            font-weight: 600;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-        }
+.score {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
 
-        .coin-image {
-            width: 5.4rem;
-            height: 5.4rem;
-            background-image: url('./public/Images/10243319.png');
-            background-size: cover;
-            margin-right: 1rem;
-        }
+.coin-image {
+    width: 4rem;
+    height: 4rem;
+    background-image: url('./public/Images/10243319.png');
+    background-size: cover;
+    margin-right: 1rem;
+}
 
-        #score-value {
-            color: #ffd700;
-        }
+#score-value {
+    color: #ffd700;
+}
 
-        .game-area {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-        }
+.game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
 
-        .tap-button {
-            width: 20rem;
-            height: 20rem;
-            background-image: url('./public/Images/sample_genie_lamp.jpg');
-            background-size: cover;
-            background-position: center;
-            border: .8rem solid #84aee5;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.1s, box-shadow 0.1s;
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-        }
+.tap-button {
+    width: 15rem;
+    height: 15rem;
+    background-image: url('./public/Images/sample_genie_lamp.jpg');
+    background-size: cover;
+    background-position: center;
+    border: .6rem solid #84aee5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
-        .tap-button:active {
-            transform: scale(0.95);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-        }
+.tap-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 
-        .footer {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-        }
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 
-        .footer-button {
-            width: 6rem;
-            height: 6rem;
-            background-size: cover;
-            border-radius: 50%;
-        }
+.footer-button {
+    width: 4rem;
+    height: 4rem;
+    background-size: cover;
+    border-radius: 50%;
+}
 
-        .leaderboard-button {
-            width: 7rem;
-            height: 7rem;
-            background-size: cover;
-            border-radius: 50%;
-            background-color: white;
-            padding: 1rem;
-        }
+.leaderboard-button {
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    border-radius: 50%;
+    background-color: white;
+    padding: 0.8rem;
+}
 
-        .leaderboard {
-            width: 100%;
-            margin-top: 2rem;
-            color: #ffffff;
-        }
+.leaderboard {
+    width: 100%;
+    margin-top: 2rem;
+    color: #ffffff;
+}
 
-        .leaderboard h2 {
-            font-size: 2.4rem;
-            margin-bottom: 1rem;
-        }
+.leaderboard h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
-        .leaderboard ol {
-            list-style: none;
-            padding: 0;
-            font-size: 1.8rem;
-        }
+.leaderboard ol {
+    list-style: none;
+    padding: 0;
+    font-size: 1.6rem;
+}
 
-        .leaderboard li {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.leaderboard li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-        .username-input {
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-        }
+.username-input {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
 
-        .username-input label {
-            font-size: 2.4rem;
-            margin-right: 1rem;
-        }
+.username-input label {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
 
-        .username-input input {
-            padding: 0.5rem;
-            font-size: 2rem;
-            border-radius: 0.5rem;
-            border: none;
-        }
+.username-input input {
+    padding: 0.5rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: none;
+}
 
-        .username-input button {
-            padding: 0.5rem 1rem;
-            font-size: 2rem;
-            border-radius: 0.5rem;
-            border: none;
-            background-color: #2d3748;
-            color: white;
-            cursor: pointer;
-            margin-left: 1rem;
-        }
+.username-input button {
+    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #2d3748;
+    color: white;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+/* Media Queries */
+@media screen and (min-width: 480px) {
+    .container {
+        max-width: 45rem;
+    }
+
+    .username {
+        font-size: 2.2rem;
+    }
+
+    .score {
+        font-size: 3rem;
+    }
+
+    .tap-button {
+        width: 18rem;
+        height: 18rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 50rem;
+    }
+
+    .username {
+        font-size: 2.5rem;
+    }
+
+    .score {
+        font-size: 3.6rem;
+    }
+
+    .coin-image {
+        width: 5.4rem;
+        height: 5.4rem;
+    }
+
+    .tap-button {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .footer-button {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .leaderboard-button {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .leaderboard h2 {
+        font-size: 2.4rem;
+    }
+
+    .leaderboard ol {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 60rem;
+    }
+}
     </style>
 </head>
 <body>

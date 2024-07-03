@@ -1,9 +1,9 @@
 const fs=require('fs')
-const StartPage=fs.readFileSync(`${__dirname}/../../Frontend/Start.html`,'utf-8')
-const mainPage=fs.readFileSync(`${__dirname}/../../Frontend/Home.html`,'utf-8')
+// const StartPage=fs.readFileSync(`${__dirname}/../../Frontend/Start.html`,'utf-8')
+// const mainPage=fs.readFileSync(`${__dirname}/../../Frontend/Home.html`,'utf-8')
 exports.start=(req,res)=>{
-res.send(StartPage)
+res.send("helllo world")
 }
 exports.home=(req,res)=>{
-    res.send(mainPage)
+    // res.send(mainPage)
 }
