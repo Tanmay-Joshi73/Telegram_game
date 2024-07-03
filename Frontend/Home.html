@@ -112,37 +112,99 @@
             background-size: cover;
             border-radius: 50%;
         }
+
+        .leaderboard-button {
+            width: 7rem;
+            height: 7rem;
+            background-size: cover;
+            border-radius: 50%;
+            background-color: white;
+            padding: 1rem;
+        }
+
+        .leaderboard {
+            width: 100%;
+            margin-top: 2rem;
+            color: #ffffff;
+        }
+
+        .leaderboard h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .leaderboard ol {
+            list-style: none;
+            padding: 0;
+            font-size: 1.8rem;
+        }
+
+        .leaderboard li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .username-input {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .username-input label {
+            font-size: 2.4rem;
+            margin-right: 1rem;
+        }
+
+        .username-input input {
+            padding: 0.5rem;
+            font-size: 2rem;
+            border-radius: 0.5rem;
+            border: none;
+        }
+
+        .username-input button {
+            padding: 0.5rem 1rem;
+            font-size: 2rem;
+            border-radius: 0.5rem;
+            border: none;
+            background-color: #2d3748;
+            color: white;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="username">Sample_Username</div>
+            <div class="username" id="username">Sample_Username</div>
             <div class="score">
                 <div class="coin-image"></div>
-                <span id="score-value">1110</span>
+                <span id="score-value">0</span>
             </div>
         </div>
         <div class="game-area">
             <button class="tap-button" onclick="incrementScore()"></button>
         </div>
         <div class="footer">
-            <div class="footer-button" style="background-image: url('./public/Images/exchange_icon.png');"></div>
-            <div class="footer-button" style="background-image: url('./public/Images/mine_icon.png');"></div>
-            <div class="footer-button" style="background-image: url('./public/Images/friends_icon.png');"></div>
-            <div class="footer-button" style="background-image: url('./public/Images/earn_icon.png');"></div>
-            <div class="footer-button" style="background-image: url('./public/Images/airdrop_icon.png');"></div>
+            <div class="leaderboard-button" style="background-image: url('./public/Images/leaderboard_icon.png');" onclick="showLeaderboard()"></div>
+        </div>
+        <div class="leaderboard" id="leaderboard">
+            <h2>Leaderboard</h2>
+            <ol id="leaderboard-list"></ol>
+        </div>
+        <div class="username-input">
+            <label for="username-input">Username:</label>
+            <input type="text" id="username-input" placeholder="Enter your username">
+            <button onclick="setUsername()">Set Username</button>
         </div>
     </div>
 
     <script>
-        let score = 1110;
-        const scoreElement = document.getElementById('score-value');
-
-        function incrementScore() {
-            score += 2;
-            scoreElement.textContent = score;
-        }
+        let users={}
+        
     </script>
 </body>
 </html>
