@@ -28,7 +28,7 @@
         }
 
         .container {
-            width: 80vw;
+            width: 35%;
             height: 90vh;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -189,22 +189,15 @@
             <button class="tap-button" onclick="incrementScore()"></button>
         </div>
         <div class="footer">
-            <div class="leaderboard-button" style="background-image: url('./public/Images/leaderboard_icon.png');" onclick="showLeaderboard()"></div>
+            <!-- <div class="leaderboard-button" style="background-image: url('./public/Images/leaderboard_icon.png');" onclick="showLeaderboard()"></div> -->
         </div>
         <div class="leaderboard" id="leaderboard">
             <h2>Leaderboard</h2>
             <ol id="leaderboard-list"></ol>
         </div>
-        <div class="username-input">
-            <label for="username-input">Username:</label>
-            <input type="text" id="username-input" placeholder="Enter your username">
-            <button onclick="setUsername()">Set Username</button>
-        </div>
+       
     </div>
 
-    <script>
-        let users={}
-        
-    </script>
+  
 </body>
 </html>
